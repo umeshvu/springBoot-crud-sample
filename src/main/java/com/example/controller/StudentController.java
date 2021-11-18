@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +26,7 @@ import com.example.service.StudentService;
 
 @RestController
 @RequestMapping("/api-v1/students")
+@CrossOrigin(origins = "http://localhost:3000")
 public class StudentController {
 	
 	Logger logger = LoggerFactory.getLogger(StudentController.class);
@@ -34,12 +36,12 @@ public class StudentController {
 
 	@GetMapping("/getAllStudent")
 	public List<StudentResponse> GetAllStudent() {
-		
-		logger.error("Error");//Default level
-		logger.warn("Warn"); //Default level
-		logger.info("Info"); //Default level
-		logger.trace("Trace"); //Need to enable
-		logger.debug("Debug"); //Need to enable
+//		
+//		logger.error("Error");//Default level
+//		logger.warn("Warn"); //Default level
+//		logger.info("Info"); //Default level
+//		logger.trace("Trace"); //Need to enable
+//		logger.debug("Debug"); //Need to enable
 
 		List<Student> studentList = studentService.getAllStudents(); // Getting all student list
 
